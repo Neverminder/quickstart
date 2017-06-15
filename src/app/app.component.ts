@@ -15,11 +15,17 @@ export class AppComponent implements OnInit{
 
   pageSize: number;
 
-  total: number;
+  total: number = 0;
 
   rows: any[];
 
-  columns = [{name: 'Name'}, {name: 'Gender'}, {name: 'Company'}];
+  editIndex: number = null;
+
+  editEmployee: CorporateEmployee;
+
+  companies: string[] = ['Johnson and Partners', 'Sealoud'];
+
+  genders: string[] = ['male', 'female'];
 
   constructor(private http: Http) {}
 
@@ -35,6 +41,11 @@ export class AppComponent implements OnInit{
       this.total = data.length;
       this.rows = data.slice(this.offset * this.pageSize, this.offset * this.pageSize + this.pageSize);
     });
+  }
+
+  edit(employee: CorporateEmployee, index: number) {
+    this.editEmployee = employee;
+    this.editIndex = index;
   }
 
 }
