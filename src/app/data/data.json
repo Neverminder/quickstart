@@ -1,16 +1,4 @@
 [
-  {
-    "name": "Ethel Price",
-    "gender": "female",
-    "company": "Johnson and Partners",
-    "age": 22,
-    "date": "2017-06-15 10:00"
-  },
-  {
-    "name": "Claudine Neal",
-    "gender": "female",
-    "company": "Sealoud",
-    "age": 55,
-    "date": "2017-06-15 10:00"
-  }
+    {"id": 1, "name": "foo"},
+    {"id": 2, "name": "bar"}
 ]
