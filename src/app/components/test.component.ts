@@ -6,12 +6,11 @@ import {Http} from '@angular/http';
     template: `
         <div>
             <h1>Test</h1>
-            <md-input-container>
-                <input mdInput placeholder="Test" [mdAutocomplete]="testAutocomplete">
-            </md-input-container>
-            <md-autocomplete #testAutocomplete="mdAutocomplete" [displayWith]="displayName">
-                <md-option *ngFor="let value of data | async" [value]="value">{{value.name}}</md-option>
-            </md-autocomplete>
+            <md-select placeholder="Data" name="name">
+                <md-option *ngFor="let value of data" [value]="value.name">
+                    {{value.name}}
+                </md-option>
+            </md-select>
         </div>
     `,
 })
@@ -22,12 +21,7 @@ export class TestComponent implements OnInit {
     constructor(private http: Http) {}
 
     ngOnInit(): void {
-        console.log('test');
-        this.http.get('/src/app/data/data.json').toPromise().then(data => this.data = data);
-    }
-
-    displayName(value: any) {
-        return value ? value.name : value;
+        this.http.get('/app/data/data.json').toPromise().then(res => this.data = res.json());
     }
 
 }

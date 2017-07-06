@@ -1,4 +1,4 @@
-import {NgModule}      from '@angular/core';
+import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent}  from './app.component';
 import {HttpModule} from '@angular/http';
@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule} from '@angular/forms';
 import {routing} from './app.routing';
 import {TestComponent} from './components/test.component';
+import {HomeComponent} from "./components/home.component";
 
 @NgModule({
     imports: [
@@ -22,6 +23,7 @@ import {TestComponent} from './components/test.component';
     ],
     declarations: [
         AppComponent,
+        HomeComponent,
         TestComponent
     ],
     bootstrap: [AppComponent]
